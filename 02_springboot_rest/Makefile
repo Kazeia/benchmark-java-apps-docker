@@ -9,4 +9,4 @@ docker-build:
 
 .PHONY: docker-run
 docker-run:
-	docker run -i -t 02_springboot_rest
+	docker run -p 8080:8080 02_springboot_rest

@@ -9,4 +9,4 @@ docker-build:
 
 .PHONY: docker-run
 docker-run:
-	docker run -i -t 03_springboot_rest_stress_testing
+	docker run -p 8080:8080 03_springboot_rest_stress_testing
