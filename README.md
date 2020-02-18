@@ -49,6 +49,7 @@ Nomenclatura de los proyectos:
  - spring-boot-start-web
  - spring-boot-devtools
  - spring-boot-starter-test
+ - docker image size: 122MB
  - consumo de recursos:
   - RAM: 238.5 MB
   - CPU: 0.20% -> alertar a carlos q sube demasiado cuando se le hace consultas
@@ -56,11 +57,19 @@ Nomenclatura de los proyectos:
   
   [PEGAR IMAGEN: Sura-benchmark-02_springboot_rest_.png]
 
-3. 03_springboot_rest_plus: Proyecto similar al anterior solo, con mas dependencias: dep1,dep2, etc.
+3. 03_springboot_rest_stress_testing: Proyecto springboot rest, con diferentes algoritmos para medir el tipo de carga via JMeter
+Link de Algoritmos: https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/java-csharpcore.html
  - springboot 2.1.12
  - spring-boot-starter-parent
-
-4. 
+ - /test1 -> Algoritmo n-body
+ - /test2 -> algoritmos binary-trees
+ - /test3 -> regex-redux
+ - docker image size: 122MB
+ - consumo de recursos:
+  - RAM: 255 MB
+  - CPU: 0.24%
+  - NET I/O: 8.19kb
+ 
 
 https://www.youtube.com/watch?v=5mpHejytgFE
 
