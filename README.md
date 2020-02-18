@@ -39,7 +39,7 @@ Nomenclatura de los proyectos:
  - docker image size: 105MB
  - consumo de recursos: 
   - RAM: 10.63 MB
-  - CPU: Min: 0.09%, Max: 0.13%
+  - CPU: 0.9%
   - NET I/O: 4.44kB
 
   [PEGAR IMAGEN: Sura-benchmark-01_empty.png]
@@ -49,7 +49,13 @@ Nomenclatura de los proyectos:
  - spring-boot-start-web
  - spring-boot-devtools
  - spring-boot-starter-test
+ - consumo de recursos:
+  - RAM: 238.5 MB
+  - CPU: 0.20% -> alertar a carlos q sube demasiado cuando se le hace consultas
+  - NET I/O: 10.2kB
   
+  [PEGAR IMAGEN: Sura-benchmark-02_springboot_rest_.png]
+
 3. 03_springboot_rest_plus: Proyecto similar al anterior solo, con mas dependencias: dep1,dep2, etc.
  - springboot 2.1.12
  - spring-boot-starter-parent
