@@ -17,8 +17,8 @@ class HomeControler {
   @GetMapping("/test1")
   public ResponseEntity<String> test1() {
     try {
-      Fasta fasta = new Fasta();
-      fasta.InitBenchmark();
+      Fannkuchredux fannkuchredux = new Fannkuchredux();
+      fannkuchredux.InitBenchmark();
     } catch (Exception e) {
       System.out.println(e.getMessage());
       return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
