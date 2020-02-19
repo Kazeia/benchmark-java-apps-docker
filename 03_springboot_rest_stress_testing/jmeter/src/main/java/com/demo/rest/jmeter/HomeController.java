@@ -1,7 +1,13 @@
 package com.demo.rest.jmeter;
 
 import com.demo.rest.jmeter.Algorithms.*;
+
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,28 +15,43 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 class HomeControler {
   @GetMapping("/test1")
-  public String test1() {
-    Binarytrees binarytrees = new Binarytrees();
+  public ResponseEntity<String> test1() {
+    try {
+      Binarytrees binarytrees = new Binarytrees();
+      binarytrees.InitBenchmark();
+    } catch (Exception e) {
+      return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
 
-    binarytrees.InitBenchmark();
-
-    return "Finish test";
+    return new ResponseEntity<>("Finish test", new HttpHeaders(), HttpStatus.OK);
   }
 
   @GetMapping("/test2")
-  public String test2() {
-    NBody nbody = new NBody();
-    nbody.InitBenchmark();
+  public ResponseEntity<String> test2() {
+    try {
+      NBody nbody = new NBody();
+      nbody.InitBenchmark();
+    } catch (Exception e) {
+      return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
 
-    return "Finish test";
+    return new ResponseEntity<>("Finish test", new HttpHeaders(), HttpStatus.OK);
   }
 
   @GetMapping("/test3")
-  public String test3() {
-    Mandelbrot mandelBrot = new Mandelbrot();
+  public ResponseEntity<String> test3() {
+    try {
+      Mandelbrot mandelBrot = new Mandelbrot();
+      mandelBrot.InitBenchmark();
+    } catch (Exception e) {
+      return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
 
-    mandelBrot.InitBenchmark();
+    return new ResponseEntity<>("Finish test", new HttpHeaders(), HttpStatus.OK);
+  }
 
-    return "Finish test";
+  @ExceptionHandler(HttpMessageNotReadableException.class)
+  public ResponseEntity<?> handleMissingRequestBody(Exception ex) {
+    return new ResponseEntity<>("asdas", new HttpHeaders(), HttpStatus.OK);
   }
 }
