@@ -65,7 +65,7 @@ public class NBody {
       // neptune end
   };
 
-  public void InitBenchmark() {
+  public void InitBenchmark() throws Exception {
     // 50000000 /4
     int n = 12500000;
 

@@ -1,5 +1,7 @@
 package com.demo.rest.jmeter.Algorithms;
 
+import java.io.BufferedOutputStream;
+import java.io.OutputStream;
 // import java.io.*;
 import java.util.concurrent.atomic.*;
 
@@ -52,7 +54,7 @@ public final class Mandelbrot {
       line[xb] = (byte) getByte(xb * 8, y);
   }
 
-  public void InitBenchmark() {
+  public void InitBenchmark() throws Exception {
     int N = 8000;
 
     Crb = new double[N + 7];
@@ -76,13 +78,13 @@ public final class Mandelbrot {
       };
     for (Thread t : pool)
       t.start();
-    // for (Thread t : pool)
-    // t.join();
+    for (Thread t : pool)
+      t.join();
 
-    // OutputStream stream = new BufferedOutputStream(System.out);
-    // stream.write(("P4\n" + N + " " + N + "\n").getBytes());
-    // for (int i = 0; i < N; i++)
-    // stream.write(out[i]);
-    // stream.close();
+    OutputStream stream = new BufferedOutputStream(System.out);
+    stream.write(("P4\n" + N + " " + N + "\n").getBytes());
+    for (int i = 0; i < N; i++)
+      stream.write(out[i]);
+    stream.close();
   }
 }

@@ -2,6 +2,7 @@ package com.demo.rest.jmeter.Algorithms;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class Binarytrees {
 
@@ -9,7 +10,7 @@ public class Binarytrees {
   private static final ExecutorService EXECUTOR_SERVICE = Executors
       .newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
-  public void InitBenchmark() {
+  public void InitBenchmark() throws Exception {
     // 21 /2
     int n = 10;
 
@@ -37,7 +38,7 @@ public class Binarytrees {
     }
 
     EXECUTOR_SERVICE.shutdown();
-    // EXECUTOR_SERVICE.awaitTermination(120L, TimeUnit.SECONDS);
+    EXECUTOR_SERVICE.awaitTermination(120L, TimeUnit.SECONDS);
 
     for (final String str : results) {
       System.out.println(str);
