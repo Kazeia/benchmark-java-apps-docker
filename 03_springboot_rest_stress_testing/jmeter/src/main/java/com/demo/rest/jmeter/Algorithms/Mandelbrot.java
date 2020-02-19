@@ -53,7 +53,7 @@ public final class Mandelbrot {
   }
 
   public void InitBenchmark() throws Exception {
-    int N = 16000;
+    int N = 8000;
 
     Crb = new double[N + 7];
     Cib = new double[N + 7];
