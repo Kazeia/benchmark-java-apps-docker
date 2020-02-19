@@ -12,11 +12,7 @@ class HomeControler {
   public String test1() {
     Binarytrees binarytrees = new Binarytrees();
 
-    try {
-      binarytrees.InitBenchmark();
-    } catch (Exception e) {
-      System.out.println(e);
-    }
+    binarytrees.InitBenchmark();
 
     return "Finish test";
   }
@@ -33,11 +29,7 @@ class HomeControler {
   public String test3() {
     Mandelbrot mandelBrot = new Mandelbrot();
 
-    try {
-      mandelBrot.InitBenchmark();
-    } catch (Exception e) {
-      System.out.println(e);
-    }
+    mandelBrot.InitBenchmark();
 
     return "Finish test";
   }
