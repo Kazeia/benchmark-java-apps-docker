@@ -23,7 +23,8 @@ public class Fasta {
   static int last = 42;
 
   public void InitBenchmark() {
-    int n = 25000000;
+    // 25000000 /4
+    int n = 6250000;
 
     for (int i = 0; i < WORKERS.length; i++) {
       WORKERS[i] = new NucleotideSelector();

@@ -11,7 +11,8 @@ public class Binarytrees {
       .newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 
   public void InitBenchmark() throws Exception {
-    int n = 21;
+    // 21 /2
+    int n = 10;
 
     final int maxDepth = n < (MIN_DEPTH + 2) ? MIN_DEPTH + 2 : n;
     final int stretchDepth = maxDepth + 1;

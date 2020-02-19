@@ -66,7 +66,8 @@ public class NBody {
   };
 
   public void InitBenchmark() {
-    int n = 50000000;
+    // 50000000 /2
+    int n = 2500000;
 
     NBody bodies = new NBody();
     System.out.printf("%.9f\n", bodies.energy());
