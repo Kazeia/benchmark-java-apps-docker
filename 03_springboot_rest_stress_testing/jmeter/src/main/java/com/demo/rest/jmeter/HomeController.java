@@ -20,6 +20,7 @@ class HomeControler {
       Binarytrees binarytrees = new Binarytrees();
       binarytrees.InitBenchmark();
     } catch (Exception e) {
+      System.out.println(e.getMessage());
       return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
@@ -32,6 +33,7 @@ class HomeControler {
       NBody nbody = new NBody();
       nbody.InitBenchmark();
     } catch (Exception e) {
+      System.out.println(e.getMessage());
       return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
@@ -44,6 +46,7 @@ class HomeControler {
       Mandelbrot mandelBrot = new Mandelbrot();
       mandelBrot.InitBenchmark();
     } catch (Exception e) {
+      System.out.println(e.getMessage());
       return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
     }
 
