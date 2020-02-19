@@ -17,8 +17,8 @@ class HomeControler {
   @GetMapping("/test1")
   public ResponseEntity<String> test1() {
     try {
-      Fannkuchredux fannkuchredux = new Fannkuchredux();
-      fannkuchredux.InitBenchmark();
+      Regexredux regexredux = new Regexredux();
+      regexredux.InitBenchmark();
     } catch (Exception e) {
       System.out.println(e.getMessage());
       return new ResponseEntity<>("Unknown error", new HttpHeaders(), HttpStatus.BAD_REQUEST);
