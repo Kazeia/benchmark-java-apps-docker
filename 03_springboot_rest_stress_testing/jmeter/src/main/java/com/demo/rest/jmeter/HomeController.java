@@ -31,9 +31,13 @@ class HomeControler {
 
   @GetMapping("/test3")
   public String test3() {
-    Fasta fasta = new Fasta();
+    Mandelbrot mandelBrot = new Mandelbrot();
 
-    fasta.InitBenchmark();
+    try {
+      mandelBrot.InitBenchmark();
+    } catch (Exception e) {
+      System.out.println(e);
+    }
 
     return "Finish test";
   }
