@@ -118,7 +118,8 @@ public class Fasta {
   }
 
   private static void writeBuffer(OutputStream writer) throws IOException {
-    writer.write(WORKERS[IN.incrementAndGet() % WORKERS.length].take().nucleotides);
+    // writer.write(WORKERS[IN.incrementAndGet() %
+    // WORKERS.length].take().nucleotides);
   }
 
   public static class NucleotideSelector extends Thread {
