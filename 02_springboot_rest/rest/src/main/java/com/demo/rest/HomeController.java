@@ -5,6 +5,9 @@ import static org.elasticsearch.common.xcontent.XContentFactory.jsonBuilder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import co.elastic.apm.api.ElasticApm;
+import co.elastic.apm.api.Transaction;
 import io.opentracing.contrib.elasticsearch.common.SpanDecorator;
 import io.opentracing.contrib.elasticsearch.common.TracingHttpClientConfigCallback;
 import io.opentracing.mock.MockSpan;
@@ -72,6 +75,9 @@ class HomeControler {
 
   @GetMapping("/")
   public String home() {
+    // Transaction transaction = ElasticApm.startTransaction();
+    // ElasticApm.currentTransaction();
+
     zxc();
 
     RestClient restClient = RestClient.builder(new HttpHost("localhost", HTTP_PORT, "http"))
@@ -116,6 +122,7 @@ class HomeControler {
     }
 
     List<MockSpan> finishedSpans = mockTracer.finishedSpans();
+    // transaction.end();
 
     // System.out.println(node);
     System.out.println(finishedSpans);

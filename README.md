@@ -133,3 +133,11 @@ scrape_configs:
 6. Check if grafana is running, go to -> http://localhost:3000, login with admin admin, after that u can update your password or skip, then add DataSource and choose Prometheus, default config, url: http://prometeus:9090 then Save & Test
 7. On The Drawer panel, hover over plus icon, then click import, type 1229 and click Load, select from Prometheus DropDown of Prometheus, then click Import.
 8. 
+
+<!-- elasticsearch y kibana -->
+/etc/elasticsearch/elasticsearch.yml
+docker run -it -v ~/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.6.0
+
+docker run --link a5bfc5ffb8da:elasticsearch -p 5601:5601 docker.elastic.co/kibana/kibana:7.6.0
+
+./apm-server -e
